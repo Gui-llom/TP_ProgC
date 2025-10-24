@@ -1,16 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int compteur = 5;  // tu peux changer cette valeur (doit être < 10)
+    int compteur = 5;  // à tester avec d'autres valeurs
+    int i = 1;
 
     if (compteur >= 10) {
         printf("Erreur : compteur doit être strictement inférieur à 10.\n");
         return 1;
     }
 
-    // Boucles imbriquées pour construire le triangle
-    for (int i = 1; i <= compteur; i++) {
-        for (int j = 1; j <= i; j++) {
+    while (i <= compteur) {
+        int j = 1;
+        while (j <= i) {
             if (i == 1) {
                 printf("* ");
             } else if (i == 2 && j == 1) {
@@ -26,8 +27,10 @@ int main() {
             } else {
                 printf("* ");
             }
+            j++;
         }
         printf("\n");
+        i++;
     }
 
     return 0;
