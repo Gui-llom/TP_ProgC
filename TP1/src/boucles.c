@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int compteur = 5;  // à tester avec d'autres valeurs
+    int compteur = 5;
     int i = 1;
 
     if (compteur >= 10) {
         printf("Erreur : compteur doit être strictement inférieur à 10.\n");
         return 1;
     }
-
     while (i <= compteur) {
         int j = 1;
         while (j <= i) {
@@ -35,3 +34,4 @@ int main() {
 
     return 0;
 }
+
