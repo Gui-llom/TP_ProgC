@@ -1,19 +1,35 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
+    char s1[50] = "Hello";
+    char s2[50] = " World!";
+    char copie[50];
+    char concat[100];
 
-    printf("Entrez deux entiers a et b : ");
-    scanf("%d", &a);
-    scanf("%d", &b);
 
-    int x = a, y = b;
-    while (y != 0) {
-        int temp = y;
-        y = x % y;
-        x = temp;
+    int len = 0;
+    while(s1[len] != '\0') len++;
+
+    printf("Longueur : %d\n", len);
+
+    int i = 0;
+    while(s1[i] != '\0') {
+        copie[i] = s1[i];
+        i++;
     }
+    copie[i] = '\0';
+    printf("Copie : %s\n", copie);
 
-    printf("PGCD(%d, %d) = %d\n", a, b, x);
+
+    int j = 0;
+    for(i = 0; s1[i] != '\0'; i++)
+        concat[j++] = s1[i];
+
+    for(i = 0; s2[i] != '\0'; i++)
+        concat[j++] = s2[i];
+
+    concat[j] = '\0';
+
+    printf("Concaténation : %s\n", concat);
     return 0;
 }
