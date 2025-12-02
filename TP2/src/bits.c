@@ -1,22 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    int resultat = 1;
+    int d = 0x10001000;  
 
-    printf("Entrez un entier n : ");
-    scanf("%d", &n);
 
-    if (n < 0) {
-        printf("Erreur : n doit être positif.\n");
-        return 1;
-    }
+    int bit4gauche  = (d >> 28) & 1;
+    int bit20gauche = (d >> 12) & 1;
 
-    for (int i = 1; i <= n; i++) {
-        resultat *= i;
-    }
-
-    printf("%d! = %d\n", n, resultat);
+    if (bit4gauche == 1 && bit20gauche == 1)
+        printf("1\n");
+    else
+        printf("0\n");
 
     return 0;
 }
